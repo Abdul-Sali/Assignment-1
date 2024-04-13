@@ -1,0 +1,76 @@
+class Vehicle:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def drive(self):
+        print(f"{self.brand} {self.model} is driving.")
+
+    def stop(self):
+        print(f"{self.brand} {self.model} has stopped.")
+
+
+class Motorcycle(Vehicle):
+    def __init__(self, brand, model, year, engine_type):
+        super().__init__(brand, model, year)
+        self.engine_type = engine_type
+
+    def wheelie(self):
+        print(f"{self.brand} {self.model} is performing a wheelie.")
+
+    def rev_engine(self):
+        print(f"{self.brand} {self.model} is revving its {self.engine_type} engine.")
+
+
+class Bus(Vehicle):
+    def __init__(self, brand, model, year, seating_capacity):
+        super().__init__(brand, model, year)
+        self.seating_capacity = seating_capacity
+
+    def open_doors(self):
+        print(f"{self.brand} {self.model} is opening its doors.")
+
+    def announce_stops(self):
+        print(f"{self.brand} {self.model} is announcing the next stop.")
+
+
+class Trailer(Vehicle):
+    def __init__(self, brand, model, year, max_load_capacity):
+        super().__init__(brand, model, year)
+        self.max_load_capacity = max_load_capacity
+
+    def attach_truck(self):
+        print(f"{self.brand} {self.model} is attached to a truck.")
+
+    def load_cargo(self):
+        print(f"{self.brand} {self.model} is loading cargo.")
+
+
+class Boat(Vehicle):
+    def __init__(self, brand, model, year, propulsion_type):
+        super().__init__(brand, model, year)
+        self.propulsion_type = propulsion_type
+
+    def start_engine(self):
+        print(f"{self.brand} {self.model}'s {self.propulsion_type} engine is starting.")
+
+    def sail(self):
+        print(f"{self.brand} {self.model} is sailing on the water.")
+
+# Example usage:
+motorcycle = Motorcycle("Honda", "CBR1000RR", 2023, "inline-four")
+motorcycle.drive()
+motorcycle.wheelie()
+
+bus = Bus("Volvo", "XC60", 2022, 50)
+bus.drive()
+bus.open_doors()
+
+trailer = Trailer("Utility", "Flatbed", 2024, "10 tons")
+trailer.attach_truck()
+trailer.load_cargo()
+
+boat = Boat("Yamaha", "WaveRunner", 2021, "jet")
+boat.start_engine()
+boat.sail()
